@@ -32,8 +32,7 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyVie
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-//        holder.tv_bar.setText(barList.get(position).getIdiomText());
-
+        holder.tv_bar.setText(barList.get(position).getBarName());
     }
 
     @Override

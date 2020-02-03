@@ -29,12 +29,12 @@ public class BarFragment extends BaseFragment {
     @Override
     protected View onFragmentViewCreated(View view, Bundle savedInstanceState) {
         barList = new ArrayList<>();
+        barList.add(new Bar("Bar"));
 
         myRecyclerView = view.findViewById(R.id.modern_recycler_view);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), barList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);
-
 
         return view;
     }
