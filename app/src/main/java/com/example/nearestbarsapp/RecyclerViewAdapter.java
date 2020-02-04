@@ -33,6 +33,7 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyVie
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.tv_bar.setText(barList.get(position).getBarName());
+        holder.tv_bar_distance.setText(barList.get(position).getBarDistance());
     }
 
     @Override
@@ -42,12 +43,13 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyVie
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_bar;
+        private TextView tv_bar, tv_bar_distance;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tv_bar = itemView.findViewById(R.id.txt_bar_name);
+            tv_bar_distance = itemView.findViewById(R.id.txt_bar_distance);
         }
     }
 }
