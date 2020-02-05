@@ -55,6 +55,9 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
 
     Activity activity;
 
+    public MapFragment(){
+    }
+
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_map;
@@ -66,21 +69,13 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
-
-        //show error dialog if Google Play Services not available
         if (!isGooglePlayServicesAvailable()) {
             Log.d("onCreate", "Google Play Services not available. Ending Test case.");
-//            activity.finish();
+            activity.finish();
         } else {
             Log.d("onCreate", "Google Play Services available. Continuing.");
         }
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-//        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-//                .findFragmentById(R.id.map);
-//        mapFragment.getMapAsync(this);
-
-        Button btnRestaurant = (Button) view.findViewById(R.id.btnBar);
+        Button btnRestaurant = view.findViewById(R.id.btnBar);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,17 +123,6 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         }
         return true;
     }
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
-
     private void build_retrofit_and_get_response(String type) {
 
         String url = "https://maps.googleapis.com/maps/";
@@ -261,23 +245,12 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         if (ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-
-            // Asking user if explanation is needed
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-
-                //Prompt the user once explanation has been shown
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_LOCATION);
-
-
             } else {
-                // No explanation needed, we can request the permission.
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_LOCATION);
@@ -293,12 +266,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_LOCATION: {
-                // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted. Do the
-                    // contacts-related task you need to do.
                     if (ContextCompat.checkSelfPermission(getContext(),
                             Manifest.permission.ACCESS_FINE_LOCATION)
                             == PackageManager.PERMISSION_GRANTED) {
@@ -308,18 +277,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
                         }
                         mMap.setMyLocationEnabled(true);
                     }
-
-                } else {
-
-                    // Permission denied, Disable the functionality that depends on this permission.
                 }
-                return;
             }
-
-            // other 'case' lines to check for other permissions this app might request.
-            // You can add here other case statements according to your requirement.
         }
     }
-
-
 }
