@@ -43,7 +43,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
     private GoogleMap mMap;
     double latitude;
     double longitude;
-    private int PROXIMITY_RADIUS = 10000;
+    private int PROXIMITY_RADIUS = 300;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
@@ -77,27 +77,11 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
 //                .findFragmentById(R.id.map);
 //        mapFragment.getMapAsync(this);
 
-        Button btnRestaurant = (Button) view.findViewById(R.id.btnRestaurant);
+        Button btnRestaurant = (Button) view.findViewById(R.id.btnBar);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                build_retrofit_and_get_response("restaurant");
-            }
-        });
-
-        Button btnHospital = (Button) view.findViewById(R.id.btnHospital);
-        btnHospital.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                build_retrofit_and_get_response("hospital");
-            }
-        });
-
-        Button btnSchool = (Button) view.findViewById(R.id.btnSchool);
-        btnSchool.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                build_retrofit_and_get_response("school");
+                build_retrofit_and_get_response("bar");
             }
         });
 
@@ -256,7 +240,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
         Log.d("onLocationChanged", String.format("latitude:%.3f longitude:%.3f", latitude, longitude));
 
