@@ -12,7 +12,7 @@ import android.widget.Button;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.nearestbarsapp.POJO.Example;
+import com.example.nearestbarsapp.models.Example;
 import com.example.nearestbarsapp.R;
 import com.example.nearestbarsapp.retrofit.RetrofitMaps;
 import com.example.nearestbarsapp.base.BaseFragment;

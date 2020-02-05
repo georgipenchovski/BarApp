@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nearestbarsapp.POJO.Bar;
+import com.example.nearestbarsapp.models.Bar;
 import com.example.nearestbarsapp.R;
 import com.example.nearestbarsapp.adapters.RecyclerViewAdapter;
 import com.example.nearestbarsapp.base.BaseFragment;

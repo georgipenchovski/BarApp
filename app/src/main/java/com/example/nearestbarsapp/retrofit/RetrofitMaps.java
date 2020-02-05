@@ -1,6 +1,6 @@
 package com.example.nearestbarsapp.retrofit;
 
-import com.example.nearestbarsapp.POJO.Example;
+import com.example.nearestbarsapp.models.Example;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

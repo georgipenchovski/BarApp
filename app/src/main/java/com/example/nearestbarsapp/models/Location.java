@@ -1,4 +1,4 @@
-package com.example.nearestbarsapp.POJO;
+package com.example.nearestbarsapp.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

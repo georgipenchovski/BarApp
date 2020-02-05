@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nearestbarsapp.POJO.Bar;
+import com.example.nearestbarsapp.models.Bar;
 import com.example.nearestbarsapp.R;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.nearestbarsapp.POJO;
+package com.example.nearestbarsapp.models;
 
 public class Bar {
 
