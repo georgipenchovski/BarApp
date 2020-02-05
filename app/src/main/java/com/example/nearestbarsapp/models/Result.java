@@ -20,12 +20,6 @@ public class Result {
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("opening_hours")
-    @Expose
-    private OpeningHours openingHours;
-    @SerializedName("photos")
-    @Expose
-    private List<Photo> photos = new ArrayList<Photo>();
     @SerializedName("place_id")
     @Expose
     private String placeId;
@@ -78,22 +72,6 @@ public class Result {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public OpeningHours getOpeningHours() {
-        return openingHours;
-    }
-
-    public void setOpeningHours(OpeningHours openingHours) {
-        this.openingHours = openingHours;
-    }
-
-    public List<Photo> getPhotos() {
-        return photos;
-    }
-
-    public void setPhotos(List<Photo> photos) {
-        this.photos = photos;
     }
 
     public String getPlaceId() {
