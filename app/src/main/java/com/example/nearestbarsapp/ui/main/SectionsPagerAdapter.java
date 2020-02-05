@@ -1,22 +1,18 @@
 package com.example.nearestbarsapp.ui.main;
 
 import android.content.Context;
-import android.content.Intent;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.nearestbarsapp.BarFragment;
-import com.example.nearestbarsapp.MapFragment;
 import com.example.nearestbarsapp.R;
+import com.example.nearestbarsapp.fragments.BarFragment;
+import com.example.nearestbarsapp.fragments.MapFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_bar, R.string.tab_map};
     Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {

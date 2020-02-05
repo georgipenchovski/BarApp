@@ -1,4 +1,4 @@
-package com.example.nearestbarsapp;
+package com.example.nearestbarsapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,13 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nearestbarsapp.POJO.Bar;
+import com.example.nearestbarsapp.R;
 
 import java.util.List;
 
-class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
-    Context mContext;
-    List<Bar> barList;
+    private Context mContext;
+    private List<Bar> barList;
 
     public RecyclerViewAdapter(Context mContext, List<Bar> bars) {
         this.mContext = mContext;

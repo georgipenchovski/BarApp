@@ -1,4 +1,4 @@
-package com.example.nearestbarsapp;
+package com.example.nearestbarsapp.retrofit;
 
 import com.example.nearestbarsapp.POJO.Example;
 

@@ -1,4 +1,4 @@
-package com.example.nearestbarsapp;
+package com.example.nearestbarsapp.fragments;
 
 import android.Manifest;
 import android.app.Activity;
@@ -14,6 +14,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.nearestbarsapp.POJO.Example;
+import com.example.nearestbarsapp.R;
+import com.example.nearestbarsapp.retrofit.RetrofitMaps;
+import com.example.nearestbarsapp.base.BaseFragment;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;

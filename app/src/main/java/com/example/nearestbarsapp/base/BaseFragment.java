@@ -1,4 +1,4 @@
-package com.example.nearestbarsapp;
+package com.example.nearestbarsapp.base;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
