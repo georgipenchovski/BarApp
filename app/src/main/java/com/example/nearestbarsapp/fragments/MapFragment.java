@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -77,7 +76,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                build_retrofit_and_get_response("bar");
+                buildRetrofit("bar");
             }
         });
 
@@ -121,7 +120,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         }
         return true;
     }
-    private void build_retrofit_and_get_response(String type) {
+    private void buildRetrofit(String type) {
 
         String url = "https://maps.googleapis.com/maps/";
 

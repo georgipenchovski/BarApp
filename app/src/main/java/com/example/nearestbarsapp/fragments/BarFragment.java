@@ -31,7 +31,7 @@ public class BarFragment extends BaseFragment {
         barList = new ArrayList<>();
         barList.add(new Bar("Bar", "1875" + "m"));
 
-        myRecyclerView = view.findViewById(R.id.modern_recycler_view);
+        myRecyclerView = view.findViewById(R.id.recycler_view);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), barList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);
