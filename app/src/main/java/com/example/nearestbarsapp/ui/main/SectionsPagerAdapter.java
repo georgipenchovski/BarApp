@@ -1,6 +1,7 @@
 package com.example.nearestbarsapp.ui.main;
 
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -11,9 +12,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.nearestbarsapp.BarFragment;
 import com.example.nearestbarsapp.MapFragment;
 import com.example.nearestbarsapp.R;
-import com.example.nearestbarsapp.models.Bar;
-
-import java.util.List;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -28,11 +26,15 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
-            return new BarFragment();
-        } else
-            return new MapFragment();
+        switch (position) {
+            case 0:
+                return new BarFragment();
+            case 1:
+                return new MapFragment();
+            default:
+                return null;
         }
+    }
 
     @Nullable
     @Override
@@ -51,6 +53,4 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return 2;
     }
-
-
 }

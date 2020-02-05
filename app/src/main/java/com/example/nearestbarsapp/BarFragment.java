@@ -3,12 +3,10 @@ package com.example.nearestbarsapp;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nearestbarsapp.models.Bar;
-import com.example.nearestbarsapp.ui.main.SectionsPagerAdapter;
+import com.example.nearestbarsapp.POJO.Bar;
 
 import java.util.ArrayList;
 import java.util.List;
