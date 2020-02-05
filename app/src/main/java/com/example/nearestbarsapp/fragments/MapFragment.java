@@ -70,10 +70,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
             checkLocationPermission();
         }
         if (!isGooglePlayServicesAvailable()) {
-            Log.d("onCreate", "Google Play Services not available. Ending Test case.");
             activity.finish();
         } else {
-            Log.d("onCreate", "Google Play Services available. Continuing.");
         }
         Button btnRestaurant = view.findViewById(R.id.btnBar);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
@@ -138,10 +136,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         call.enqueue(new Callback<Example>() {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-
                 try {
                     mMap.clear();
-                    // This loop will go through all the results and add marker on each location.
                     for (int i = 0; i < response.body().getResults().size(); i++) {
                         Double lat = response.body().getResults().get(i).getGeometry().getLocation().getLat();
                         Double lng = response.body().getResults().get(i).getGeometry().getLocation().getLng();
@@ -149,27 +145,20 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
                         String vicinity = response.body().getResults().get(i).getVicinity();
                         MarkerOptions markerOptions = new MarkerOptions();
                         LatLng latLng = new LatLng(lat, lng);
-                        // Position of Marker on Map
                         markerOptions.position(latLng);
-                        // Adding Title to the Marker
                         markerOptions.title(placeName + " : " + vicinity);
-                        // Adding Marker to the Camera.
                         Marker m = mMap.addMarker(markerOptions);
-                        // Adding colour to the marker
                         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-                        // move map camera
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                        mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
+                        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
                     }
                 } catch (Exception e) {
-                    Log.d("onResponse", "There is an error");
                     e.printStackTrace();
                 }
             }
 
             @Override
             public void onFailure(Call<Example> call, Throwable t) {
-                Log.d("onFailure", t.toString());
             }
         });
 
@@ -204,9 +193,6 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
 
     @Override
     public void onLocationChanged(Location location) {
-
-        Log.d("onLocationChanged", "entered");
-
         mLastLocation = location;
         if (mCurrLocationMarker != null) {
             mCurrLocationMarker.remove();
@@ -228,10 +214,6 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-
-        Log.d("onLocationChanged", String.format("latitude:%.3f longitude:%.3f", latitude, longitude));
-
-        Log.d("onLocationChanged", "Exit");
     }
 
     @Override

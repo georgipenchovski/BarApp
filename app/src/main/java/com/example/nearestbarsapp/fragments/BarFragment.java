@@ -20,7 +20,6 @@ public class BarFragment extends BaseFragment {
     private RecyclerView myRecyclerView;
     private List<Bar> barList;
 
-
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_bar;
