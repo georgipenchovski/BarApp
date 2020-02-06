@@ -72,8 +72,8 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
             activity.finish();
         } else {
         }
-        Button btnRestaurant = view.findViewById(R.id.btnBar);
-        btnRestaurant.setOnClickListener(new View.OnClickListener() {
+        Button btnBar = view.findViewById(R.id.btnBar);
+        btnBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 buildRetrofit("bar");
