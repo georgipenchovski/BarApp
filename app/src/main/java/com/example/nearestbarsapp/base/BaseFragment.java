@@ -29,5 +29,8 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract View onFragmentViewCreated(View view, Bundle savedInstanceState);
 
-}
 
+    protected View getLayoutView() {
+        return view;
+    }
+}

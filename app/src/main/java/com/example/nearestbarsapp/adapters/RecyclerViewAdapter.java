@@ -7,10 +7,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nearestbarsapp.models.Bar;
 import com.example.nearestbarsapp.R;
+import com.example.nearestbarsapp.models.Bar;
 
 import java.util.List;
 
@@ -18,6 +19,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext;
     private List<Bar> barList;
+    private ItemClickListener mClickListener;
+
 
     public RecyclerViewAdapter(Context mContext, List<Bar> bars) {
         this.mContext = mContext;
@@ -33,8 +36,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tv_bar.setText(barList.get(position).getBarName());
+        final Bar bar = barList.get(position);
+
+        holder.tv_bar_name.setText(barList.get(position).getBarName());
         holder.tv_bar_distance.setText(barList.get(position).getBarDistance());
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mClickListener.onItemClick(bar);
+            }
+        });
+
     }
 
     @Override
@@ -44,13 +56,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_bar, tv_bar_distance;
+        TextView tv_bar_name, tv_bar_distance;
+        CardView cardView;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_bar = itemView.findViewById(R.id.txt_bar_name);
+            tv_bar_name = itemView.findViewById(R.id.txt_bar_name);
             tv_bar_distance = itemView.findViewById(R.id.txt_bar_distance);
+            cardView = itemView.findViewById(R.id.cv_item_bar);
+
         }
+    }
+
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
+    }
+
+    public interface ItemClickListener {
+        void onItemClick(Bar bar);
     }
 }
