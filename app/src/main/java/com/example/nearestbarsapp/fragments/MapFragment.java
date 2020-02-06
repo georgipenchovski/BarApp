@@ -12,10 +12,10 @@ import android.widget.Button;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.nearestbarsapp.models.Example;
 import com.example.nearestbarsapp.R;
-import com.example.nearestbarsapp.retrofit.RetrofitMaps;
 import com.example.nearestbarsapp.base.BaseFragment;
+import com.example.nearestbarsapp.models.Example;
+import com.example.nearestbarsapp.retrofit.RetrofitMaps;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -54,7 +54,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
 
     Activity activity;
 
-    public MapFragment(){
+    public MapFragment() {
     }
 
     @Override
@@ -120,6 +120,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
         }
         return true;
     }
+
     private void buildRetrofit(String type) {
 
         String url = "https://maps.googleapis.com/maps/";

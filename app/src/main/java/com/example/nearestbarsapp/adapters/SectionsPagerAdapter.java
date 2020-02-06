@@ -1,4 +1,4 @@
-package com.example.nearestbarsapp.ui.main;
+package com.example.nearestbarsapp.adapters;
 
 import android.content.Context;
 

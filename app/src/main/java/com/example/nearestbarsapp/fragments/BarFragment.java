@@ -26,7 +26,6 @@ public class BarFragment extends BaseFragment implements RecyclerViewAdapter.Ite
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_bar;
-
     }
 
     @Override
