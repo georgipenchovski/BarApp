@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -72,7 +73,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback,
             activity.finish();
         } else {
         }
-        Button btnBar = view.findViewById(R.id.btnBar);
+        ImageButton btnBar = view.findViewById(R.id.btnBar);
         btnBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
