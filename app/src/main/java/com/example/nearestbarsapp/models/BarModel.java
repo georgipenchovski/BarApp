@@ -6,11 +6,11 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Result {
+public class BarModel {
 
     @SerializedName("geometry")
     @Expose
-    private Geometry geometry;
+    private GeometryModel geometry;
     @SerializedName("id")
     @Expose
     private String id;
@@ -24,11 +24,11 @@ public class Result {
     @Expose
     private String vicinity;
 
-    public Geometry getGeometry() {
+    public GeometryModel getGeometry() {
         return geometry;
     }
 
-    public void setGeometry(Geometry geometry) {
+    public void setGeometry(GeometryModel geometry) {
         this.geometry = geometry;
     }
 
@@ -39,7 +39,6 @@ public class Result {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public List<String> getTypes() {
         return types;

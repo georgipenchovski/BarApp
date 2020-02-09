@@ -6,17 +6,16 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Example {
+public class BarCollection {
     @SerializedName("results")
     @Expose
-    private List<Result> results = new ArrayList<Result>();
+    private List<BarModel> results = new ArrayList<BarModel>();
 
-    public List<Result> getResults() {
+    public List<BarModel> getResults() {
         return results;
     }
-    public void setResults(List<Result> results) {
+
+    public void setResults(List<BarModel> results) {
         this.results = results;
     }
-
-
 }

@@ -6,4 +6,10 @@
     <string name="fragment_map">Map</string>
     <string name="API_key">AIzaSyAgyZuAj_jhJTZa5-7umraXyz1sHRlhNXk</string>
     <string name="title_activity_maps">Map</string>
+    <string name="error_turn_on_gps">Please Turn ON your GPS Connection</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="meters">m</string>
+    <string name="error_bars">"Error occurred while fetching bars. "</string>
+    <string name="no_bars_found">No bars found.</string>
 </resources>

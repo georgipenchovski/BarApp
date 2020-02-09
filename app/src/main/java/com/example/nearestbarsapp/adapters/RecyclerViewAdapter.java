@@ -11,39 +11,42 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nearestbarsapp.R;
-import com.example.nearestbarsapp.models.Bar;
+import com.example.nearestbarsapp.models.BarItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
-    private Context mContext;
-    private List<Bar> barList;
-    private ItemClickListener mClickListener;
+    private Context context;
+    private List<BarItem> barList = new ArrayList<>();
+    private ItemClickListener clickListener;
 
-
-    public RecyclerViewAdapter(Context mContext, List<Bar> bars) {
-        this.mContext = mContext;
-        this.barList = bars;
+    public RecyclerViewAdapter(Context context) {
+        this.context = context;
     }
 
+    public void setBars(List<BarItem> barList) {
+        this.barList = barList;
+        notifyDataSetChanged();
+    }
+
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.bar_item, parent, false);
-        MyViewHolder myViewHolder = new MyViewHolder(v);
-        return myViewHolder;
+        View v = LayoutInflater.from(context).inflate(R.layout.bar_item, parent, false);
+        return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        final Bar bar = barList.get(position);
-
-        holder.tv_bar_name.setText(barList.get(position).getBarName());
-        holder.tv_bar_distance.setText(barList.get(position).getBarDistance());
+        final BarItem bar = barList.get(position);
+        holder.barName.setText(barList.get(position).getName());
+        holder.barDistance.setText(Math.round(barList.get(position).getDistance()) + holder.meters);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mClickListener.onItemClick(bar);
+                clickListener.onItemClick(bar);
             }
         });
 
@@ -56,25 +59,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_bar_name, tv_bar_distance;
+        TextView barName, barDistance;
         CardView cardView;
-
+        String meters;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_bar_name = itemView.findViewById(R.id.txt_bar_name);
-            tv_bar_distance = itemView.findViewById(R.id.txt_bar_distance);
+            barName = itemView.findViewById(R.id.txt_bar_name);
+            barDistance = itemView.findViewById(R.id.txt_bar_distance);
             cardView = itemView.findViewById(R.id.cv_item_bar);
+            meters = itemView.getContext().getResources().getString(R.string.meters);
+
 
         }
     }
 
     public void setClickListener(ItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
+        this.clickListener = itemClickListener;
     }
 
     public interface ItemClickListener {
-        void onItemClick(Bar bar);
+        void onItemClick(BarItem bar);
     }
 }
