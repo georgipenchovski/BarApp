@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NearestBarsApp</string>
+    <string name="app_name">TheBars</string>
     <string name="tab_bar">Bar List</string>
     <string name="tab_map">Map</string>
     <string name="fragment_bar">Bar List</string>
