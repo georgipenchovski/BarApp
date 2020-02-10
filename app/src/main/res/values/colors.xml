@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#FF6D00</color>
     <color name="colorPrimaryDark">#030303</color>
-    <color name="colorAccent">#0091EA</color>
+    <color name="colorAccent">#0091EC</color>
     <color name="colorCardview_bar_background">#EEEEEE</color>
     <color name="colorCardview_bar_text">#4D4D4D</color>
 </resources>
