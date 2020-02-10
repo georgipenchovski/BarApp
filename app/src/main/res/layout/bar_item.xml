@@ -30,7 +30,7 @@
             android:focusableInTouchMode="true"
             android:freezesText="true"
             android:textColor="@color/colorCardview_bar_text"
-            android:text="bar"
+            android:textStyle="bold"
             android:textSize="@dimen/text_small" />
 
         <TextView
@@ -44,7 +44,6 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:freezesText="true"
-            android:text="1548"
             android:textColor="@color/colorCardview_bar_text"
             android:textSize="@dimen/text_small" />
 

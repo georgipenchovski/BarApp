@@ -3,17 +3,17 @@ package com.example.nearestbarsapp.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Geometry {
+public class GeometryModel {
 
     @SerializedName("location")
     @Expose
-    private Location location;
+    private LocationModel location;
 
-    public Location getLocation() {
+    public LocationModel getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(LocationModel location) {
         this.location = location;
     }
 
